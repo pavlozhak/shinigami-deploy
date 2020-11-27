@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\Projects;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
+Route::get('/projects', [Projects::class, 'index'])->name('projects');
