@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Projects;
+use App\Http\Controllers\Users;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
 Route::get('/projects', [Projects::class, 'index'])->name('projects');
+Route::get('/users', [Users::class, 'index'])->name('users');
+Route::get('/users/add', [Users::class, 'create'])->name('user-add');
+
+Route::post('/users/store', [Users::class, 'store'])->name('user-store');
