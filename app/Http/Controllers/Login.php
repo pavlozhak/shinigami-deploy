@@ -30,4 +30,9 @@ class Login extends Controller
             return back()->withErrors(['Login failed']);
         }
     }
+
+    public function logout() {
+        Auth::logout();
+        return back();
+    }
 }

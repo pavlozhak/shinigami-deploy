@@ -21,9 +21,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
     Route::get('/projects', [Projects::class, 'index'])->name('projects');
+
     Route::get('/users', [Users::class, 'index'])->name('users');
     Route::get('/users/add', [Users::class, 'create'])->name('user-add');
     Route::get('/user/profile/{username}', [Users::class, 'profile'])->name('user-profile');
+
+    Route::get('/logout', [Login::class, 'logout'])->name('logout');
 
     Route::post('/users/store', [Users::class, 'store'])->name('user-store');
 });

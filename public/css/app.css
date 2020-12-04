@@ -10,6 +10,12 @@ img.user-avatar-mini {
     border-radius: 12px;
 }
 
+img.user-avatar-nav-menu {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
 .login-page-background {
     background-image: url("../images/background.png");
     background-repeat: no-repeat;
