@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\Login;
 use App\Http\Controllers\Projects;
 use App\Http\Controllers\Users;
 use Illuminate\Support\Facades\Route;
@@ -16,10 +17,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
-Route::get('/projects', [Projects::class, 'index'])->name('projects');
-Route::get('/users', [Users::class, 'index'])->name('users');
-Route::get('/users/add', [Users::class, 'create'])->name('user-add');
-Route::get('/user/profile/{username}', [Users::class, 'profile'])->name('user-profile');
+Route::middleware(['auth'])->group(function () {
 
-Route::post('/users/store', [Users::class, 'store'])->name('user-store');
+    Route::get('/', [Dashboard::class, 'index'])->name('dashboard');
+    Route::get('/projects', [Projects::class, 'index'])->name('projects');
+    Route::get('/users', [Users::class, 'index'])->name('users');
+    Route::get('/users/add', [Users::class, 'create'])->name('user-add');
+    Route::get('/user/profile/{username}', [Users::class, 'profile'])->name('user-profile');
+
+    Route::post('/users/store', [Users::class, 'store'])->name('user-store');
+});
+
+Route::get('/login', [Login::class, 'index'])->name('login-page');
+Route::post('/login/handler', [Login::class, 'handler'])->name('login-handler');

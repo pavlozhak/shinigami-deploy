@@ -9,3 +9,17 @@ img.user-avatar-mini {
     height: 25px;
     border-radius: 12px;
 }
+
+.login-page-background {
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+}
+.login-box {
+    -webkit-box-shadow: -1px 2px 6px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 2px 6px -1px rgba(0,0,0,0.75);
+    box-shadow: -1px 2px 6px -1px rgba(0,0,0,0.75);
+}
