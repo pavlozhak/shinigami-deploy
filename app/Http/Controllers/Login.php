@@ -35,4 +35,8 @@ class Login extends Controller
         Auth::logout();
         return back();
     }
+
+    public function permissionError() {
+        return view('errors.permission');
+    }
 }

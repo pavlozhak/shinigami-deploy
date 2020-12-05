@@ -39,7 +39,7 @@
                                 <a class="dropdown-item" href="{{ route('user-add') }}">Add new</a>
                                 <a class="dropdown-item" href="{{ route('users') }}">Manage</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="{{ route('role-manage') }}">Roles</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
@@ -60,7 +60,7 @@
                     </ul>
                     <ul class="navbar-nav ">
                         <li class="nav-item">
-                            <img src="{{ asset('avatars/' . Auth::user()->avatar) }}" alt="{{ Auth::user()->name }}" title="{{ Auth::user()->name }}" class="user-avatar-nav-menu">
+                            <img src="{{ (Auth::user()->avatar) ? asset('avatars/' . Auth::user()->avatar) : asset('images/default-avatar.png') }}" alt="{{ Auth::user()->name }}" title="{{ Auth::user()->name }}" class="user-avatar-nav-menu">
                         </li>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" id="navDropDownLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

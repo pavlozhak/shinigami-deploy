@@ -24,6 +24,7 @@
                         <th scope="col"></th>
                         <th scope="col">Username</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Role</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -39,6 +40,26 @@
                             </td>
                             <td>
                                 {{ $user->email }}
+                            </td>
+                            <td>
+                                @foreach($user->roles as $role)
+
+                                    @switch($role->name)
+
+                                        @case('Admin')
+                                            <span class="badge badge-success">{{ $role->name }}</span>
+                                            @break
+
+                                        @case('User')
+                                            <span class="badge badge-warning">{{ $role->name }}</span>
+                                            @break
+
+                                        @default
+                                            <span class="badge badge-secondary">No role</span>
+
+                                    @endswitch
+
+                                @endforeach
                             </td>
                         </tr>
                     @endforeach
