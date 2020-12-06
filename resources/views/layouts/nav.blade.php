@@ -40,6 +40,7 @@
                                 <a class="dropdown-item" href="{{ route('users') }}">Manage</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('role-manage') }}">Roles</a>
+                                <a class="dropdown-item" href="{{ route('permission-manage') }}">Permissions</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">

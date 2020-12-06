@@ -50,10 +50,16 @@
         </div>
 
         <div class="row mt-3">
-            <div class="col-12">
+            <div class="col-6">
                 <h3>
                     Permissions
                 </h3>
+            </div>
+            <div class="col-6">
+                <a href="{{ route('permission-add') }}" target="_parent" class="btn btn-light float-right">
+                    <i class="fas fa-plus"></i>
+                    Add new
+                </a>
             </div>
         </div>
 

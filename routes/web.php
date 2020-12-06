@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Login;
+use App\Http\Controllers\Permissions;
 use App\Http\Controllers\Projects;
 use App\Http\Controllers\Roles;
 use App\Http\Controllers\Users;
@@ -34,6 +35,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/roles/edit/{role_id}', [Roles::class, 'edit'])->name('role-edit');
     Route::get('/roles/remove/{role_id}', [Roles::class, 'remove'])->name('role-remove');
 
+    Route::get('/permission', [Permissions::class, 'index'])->name('permission-manage');
+    Route::get('/permission/add', [Permissions::class, 'add'])->name('permission-add');
+    Route::get('/permission/edit/{permission_id}', [Permissions::class, 'edit'])->name('permission-edit');
+    Route::get('/permission/remove/{permission_id}', [Permissions::class, 'remove'])->name('permission-remove');
+
     Route::get('/logout', [Login::class, 'logout'])->name('logout');
 
     // POST
@@ -42,6 +48,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/roles/store', [Roles::class, 'store'])->name('role-store');
     Route::post('/roles/permission/set', [Roles::class, 'setRolePermission'])->name('role-set-permission');
     Route::post('/roles/save', [Roles::class, 'saveRole'])->name('role-save');
+
+    Route::post('/permission/store', [Permissions::class, 'store'])->name('permission-store');
+    Route::post('/permission/save', [Permissions::class, 'savePermission'])->name('permission-save');
 
 });
 

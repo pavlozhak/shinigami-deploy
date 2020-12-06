@@ -25,4 +25,18 @@ $(function () {
         confirm.attr('href', url.replace('null', role_id));
     });
 
+    // Permission -> index
+    $('a#permission-remove-btn').on('click', function () {
+        let role_id = $(this).data('id');
+        let confirm = $('div#permission-remove-modal a#remove-confirm');
+
+        let url = confirm.data('ex');
+        confirm.attr('href', url.replace('null', role_id));
+    });
+
+    $('input#inputName').on('blur', function () {
+        let val = $(this).val();
+        $('input#inputSlug').val(val.replace(/\s+/g, '-').toLowerCase());
+    });
+
 });
